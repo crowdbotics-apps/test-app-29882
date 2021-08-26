@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import HomePage, CustomText
+from home.models import CustomText, HomePage, Profile_User
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -85,4 +85,10 @@ class CustomTextSerializer(serializers.ModelSerializer):
 class HomePageSerializer(serializers.ModelSerializer):
     class Meta:
         model = HomePage
+        fields = "__all__"
+
+
+class Profile_UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile_User
         fields = "__all__"
